@@ -1,0 +1,35 @@
+
+.navbar{
+border-bottom: 2px solid black;
+   padding: 16px 0 ;
+}
+
+.navbar-container{
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navbar h1{
+    font-size: 3rem;
+}
+
+.navbar-links{
+    width: 20%;
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-link{
+    width: 120px;
+    border-radius: 10px;
+    background-color:#ec3944 ;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
