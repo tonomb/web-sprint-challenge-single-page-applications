@@ -92,7 +92,7 @@ const App = () => {
   return (
       <div>
         <Navbar />
-        <Switch>   
+        <Switch>  
 	        <Route path='/pizza'>
             <Form 
             formValues={formValues}
