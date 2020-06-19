@@ -7,7 +7,7 @@ function Navbar(props){
     return(
         <div className='navbar'>
             <div className='navbar-container'>
-                <Link>
+                <Link to={'/'}>
                     <h1>Lambda Eats</h1>
                 </Link>
                 <nav className='navbar-links'>

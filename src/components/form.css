@@ -67,3 +67,17 @@
     left: 5px;
     box-shadow: none;
 }
+
+.order-confirmation{
+    font-size: 4rem;
+}
+
+.order-confirmation h3{
+    
+    margin: 16px;
+}
+
+.error{
+    font-size: 2rem;
+    color:red;
+}
