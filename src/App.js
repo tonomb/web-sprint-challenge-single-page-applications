@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route} from 'react-router-dom'
+import React, { useState, useEffect,} from "react";
+import { Switch, Route, useHistory} from 'react-router-dom';
+import axios from 'axios';
 import * as Yup from "yup";
 
 import Navbar from './components/navbar'
@@ -20,31 +21,42 @@ const initialFormValues ={
 }
 
 
+
 const App = () => {
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const [currentOrder, setCurrentOrder] = useState(initialFormValues) 
-  const [errors, setErrors] = useState({
-    email: "",
-    password: "",
-    terms: ""
-  });
+  const [errors, setErrors] = useState({});
+
 
   const [buttonDisabled, setButtonDisabled] = useState(true)
 
+  let history = useHistory();
+
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
-      console.log(valid);
-      
       setButtonDisabled(!valid);
     });
   }, [formValues]);
 
   function onSubmit(e){
-
+    
     e.preventDefault()
-    setCurrentOrder(formValues)
-    setFormValues(initialFormValues)
+    
+    // setCurrentOrder(formValues)
+    
+    axios.post('https://reqres.in/api/users', formValues)
+      .then(res =>{
+        // debugger
+        setCurrentOrder(res.data)
+      })
+      .catch(err =>{
+        debugger
+      })
+      .finally(() =>{
+        setFormValues(initialFormValues)
+        history.push("/order-confirmation");
+      })
     
   }
 
@@ -103,6 +115,21 @@ const App = () => {
       <div>
         <Navbar />
         <Switch>  
+          <Route path='/order-confirmation' >
+          <div className="order-confirmation">
+            <h2>Thank you for your order</h2>
+            <h3>Name: {currentOrder.name} </h3>
+            <h3>Size: {currentOrder.size}</h3>
+            <h3>Toppings: 
+              {
+              Object.entries(currentOrder.toppings).map(topping =>{
+                return <h4>{topping}</h4>
+              })
+              }
+            </h3>
+            <h3>Special Instruction: {currentOrder.instructions}</h3>
+          </div>
+          </Route>
 	        <Route path='/pizza'>
             <Form 
             formValues={formValues}

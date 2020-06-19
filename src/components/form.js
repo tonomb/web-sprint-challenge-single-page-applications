@@ -103,14 +103,6 @@ function PizzaForm(props) {
           Place Order
         </button>
       </form>
-      <div className="order-confirmation">
-        <h2>Order Confirmation</h2>
-        <h3>Name: {currentOrder.name} </h3>
-        <h3>Size: {currentOrder.size}</h3>
-        <h3>Toppings:
-        </h3>
-        <h3>Special Instruction: {currentOrder.instructions}</h3>
-      </div>
     </div>
   );
 }
