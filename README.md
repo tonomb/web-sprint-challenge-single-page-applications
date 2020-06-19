@@ -31,40 +31,45 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
-1. How would you explain form validation to someone who has never programmed before?
-1. In 1-2 sentences, define end to end testing.
+    it allows you to nest the routs in the app so that you don´t have to had code the whole route. 
+
+2. How would you explain form validation to someone who has never programmed before?
+    Do you know that message when you create an account on a webpage that says your password need to have a number and an uppercase letter.  Thats form validation.  Its checking that what you type matches the specifications.
+
+3. In 1-2 sentences, define end to end testing.
+    with end to end testing your simulating the users journey in the browser to make sure there are no bug in your code.
 
 ## Instructions
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
+- [+] Create a forked copy of this project
+- [+] Add your team lead as collaborator on Github
+- [+] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [+] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [+] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [+] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
 
 Your finished project must include all of the following requirements:
 
-- [ ] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable)
-- [ ] A form with a "/pizza" route
-- [ ] A name text input field
-- [ ] Validation for name - name must be at least 2 characters
-- [ ] A dropdown for pizza size
-- [ ] A checklist for toppings - at least 4 (hint: name each separately!)
-- [ ] Text input for special instructions
-- [ ] An Add to Order button that submits form and returns a database record of name, size, toppings and special instructions
+- [+] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable)
+- [+] A form with a "/pizza" route
+- [+] A name text input field
+- [+] Validation for name - name must be at least 2 characters
+- [+] A dropdown for pizza size
+- [+] A checklist for toppings - at least 4 (hint: name each separately!)
+- [+] Text input for special instructions
+- [+] An Add to Order button that submits form and returns a database record of name, size, toppings and special instructions
 
 #### Testing MVP
 
 Implement the following tests in Cypress:
 
-- [ ] test that you can add text to the box
-- [ ] test that you can select multiple toppings
-- [ ] test that you can submit the form
+- [+] test that you can add text to the box
+- [+] test that you can select multiple toppings
+- [+] test that you can submit the form
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
