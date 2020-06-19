@@ -34,6 +34,8 @@ const App = () => {
 
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
+      console.log(valid);
+      
       setButtonDisabled(!valid);
     });
   }, [formValues]);
@@ -50,6 +52,15 @@ const App = () => {
 
     const { name, value} = e.target
 
+    setFormValues({
+      ...formValues,
+      [name]: value
+    })
+  }
+
+  function validate(e){
+
+    const { name, value} = e.target
     Yup
     .reach(formSchema, name)
     //we can then run validate using the value
@@ -69,7 +80,6 @@ const App = () => {
         [name]: err.errors[0]
       });
     });
-
 
     setFormValues({
       ...formValues,
@@ -100,7 +110,9 @@ const App = () => {
              onSubmit={onSubmit}
              onInputChange={onInputChange}
              onCheckboxChange={onCheckboxChange}
-             errors={errors}/>
+             errors={errors}
+             buttonDisabled={buttonDisabled}
+             validate={validate}/>
 	        </Route>
 	        <Route path='/'>
             <Home />

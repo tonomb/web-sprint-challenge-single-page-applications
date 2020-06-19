@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import "./form.css";
 
 function PizzaForm(props) {
-  const { formValues, onSubmit, onInputChange, onCheckboxChange, currentOrder,errors} = props;
+  const { formValues, onSubmit, onInputChange, onCheckboxChange, currentOrder,errors,buttonDisabled, validate} = props;
 
   return (
     <div className="form-container">
@@ -20,7 +20,7 @@ function PizzaForm(props) {
           name="name"
           value={formValues.name}
           placeholder="Please enter your full name"
-          onChange={onInputChange}
+          onChange={onInputChange, validate}
         ></input>
         {errors.name ? (<p className="error">{errors.name}</p>) : null}
         <div className="form-label">Choice of Size</div>
@@ -99,7 +99,7 @@ function PizzaForm(props) {
           onChange={onInputChange} 
           value={formValues.instructions}
         ></textarea>
-        <button className="order-btn" type="submit">
+        <button className="order-btn" type="submit" disabled={buttonDisabled}>
           Place Order
         </button>
       </form>
