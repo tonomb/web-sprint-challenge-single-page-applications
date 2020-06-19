@@ -6,12 +6,12 @@ import Home from './components/home'
 import Form from './components/form'
 
 const App = () => {
-  
+
   return (
       <div>
         <Navbar />
         <Switch>   
-	        <Route path='/order-pizza'>
+	        <Route path='/pizza'>
             <Form />
 	        </Route>
 	        <Route path='/'>

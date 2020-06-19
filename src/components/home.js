@@ -11,7 +11,7 @@ function Home(props){
         <div>
             <div className='home-splash'>
                 <h1>Your favorite food, deliverd while coding</h1>
-                <Link to='/order-pizza'>
+                <Link to='/pizza'>
                     <button>Pizza?</button>
                 </Link>
             </div>
